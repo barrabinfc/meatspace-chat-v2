@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "async": "^0.9.0",
-    "browserify": "^6.1.0",
+    "browserify": "^3.8.0",
     "data-uri-to-blob": "0.0.4",
     "data-uri-to-buffer": "~0.0.3",
     "fingerprintjs": "~0.5.3",

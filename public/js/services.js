@@ -56,8 +56,8 @@ exports.getMessage = function (data, mutedFP, userIdManager, profile, messages) 
 
     var children = messages.find('li');
 
+    // Play/pause when message is visible on screen
     var waypoints = [];
-
     waypoints.push(new Waypoint({
       element: li[0],
       handler: function (direction) {
@@ -68,7 +68,6 @@ exports.getMessage = function (data, mutedFP, userIdManager, profile, messages) 
         return -$(this.element).outerHeight();
       }
     }));
-
     waypoints.push(new Waypoint({
       element: li[0],
       handler: function (direction) {
@@ -77,14 +76,14 @@ exports.getMessage = function (data, mutedFP, userIdManager, profile, messages) 
       },
       offset: '100%'
     }));
-
     li.data('waypoints', waypoints);
 
+
+    // Follow new messages (scroll bottom to top)
     var size = $(window).innerHeight();
     var last = messages[0].lastChild;
     var bottom = last ? last.getBoundingClientRect().bottom : 0;
     var follow = bottom < size + 50;
-
     if (follow) {
       if (children.length > MAX_LIMIT) {
         children.slice(0, children.length - MAX_LIMIT).each(function () {
