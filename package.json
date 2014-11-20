@@ -2,7 +2,6 @@
   "name": "meatspace-chat",
   "version": "1.0.0",
   "description": "v2 - very experimental",
-  "private": true,
   "main": "index.js",
   "engines": {
     "node": "~0.10.x",
